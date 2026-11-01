@@ -52,7 +52,7 @@ function montarMapaTrilha() {
 
         // Posiciona a fase nas coordenadas corretas em cima da linha guia
         nodeContainer.style.position = 'absolute';
-        nodeContainer.style.left = `${fase.x}px`;
+        nodeContainer.style.left = `${(fase.x / 480) * 100}%`; // 480 = largura base do mapa (mesmo do viewBox do SVG)
         nodeContainer.style.top = `${fase.y}px`;
         nodeContainer.style.transform = 'translate(-50%, -50%)';
 

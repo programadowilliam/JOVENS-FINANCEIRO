@@ -16,6 +16,7 @@
     stroke: #1899d6;
     stroke-width: 10;
     stroke-linecap: round;
+    vector-effect: non-scaling-stroke; /* mantém a espessura da linha mesmo quando o SVG encolhe */
 }
 
 /* Camadas e Nós das Fases */
