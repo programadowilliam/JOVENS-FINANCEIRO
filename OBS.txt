@@ -1,0 +1,19 @@
+
+1 - RESPONSIVO (SE ADPTAR A QUALQUER RESOLUÇÃO)
+
+ 1.1 - A Navbar Superior (.navbar) e a Nav Inferior (.mobile-nav): No arquivo dias_xpstyle.css, elas usam position: fixed combinada com left: 0; right: 0; (ou width: 100%). Isso faz com que as barras cinzas acompanhem a largura da tela
+ automaticamente, grudadas nas bordas.A Navbar Superior (.navbar) e a Nav Inferior (.mobile-nav): No arquivo dias_xpstyle.css, elas usam position: fixed combinada com left: 0; right: 0; (ou width: 100%).
+ Isso faz com que as barras cinzas acompanhem a largura da tela automaticamente, grudadas nas bordas.
+
+ 1.2 - O Modal Pop-up (.quiz-modal): No arquivo modal.css, ele usa max-width: 400px e width: 100%. Segue a mesma lógica exata: se adapta em telas pequenas, mas não passa de 400px no computador.
+
+ 1.3 - No arquivo style.css, no bloco .map-scrollable-content Em um celular (telas menores que 480px): O comando width: 100% entra em ação. Ele diz para o mapa ocupar exatamente a largura total da tela do aparelho 
+(seja ela 320px, 375px ou os 410px que aparecem na sua foto).Em um computador (telas grandes): O comando max-width: 480px entra em ação. 
+Ele trava a largura para que o mapa não vire uma linha esticada gigante e feia. A linha margin: 0 auto entra de suporte para garantir que essa "faixa" de 480px fique bem no meio da tela do monitor,
+simulando um smartphone.Essa técnica se chama Design Fluido (ou Liquid Layout). Ela é uma alternativa moderna e muito limpa às Media Queries (@media) [1] para interfaces que possuem um formato vertical de aplicativo, 
+como o Duolingo ou a sua trilha da GranaUp!
+
+ 1.4 - Tanto na lista de posições do ranking (.ranking-list) quanto nas caixas de estatísticas do perfil (.stats-grid), usamos o modelo de caixa flexível (Flexbox):No Ranking: O comando justify-content: space-between 
+empurra a posição para a extrema esquerda e os pontos de XP para a extrema direita automaticamente, não importa se a tela tem 320px ou 480px de largura. Elas sempre se adaptam às bordas da caixa de forma proporcional.
+No Perfil: A propriedade flex: 1 adicionada nas caixas de estatísticas (.stat-box) age dividindo o espaço horizontal disponível por igual. Ela calcula o tamanho da tela e faz com que a caixa de "XP Total" e a caixa de
+ "Fases Feitas" tenham exatamente a mesma largura lado a lado, sem amassar o texto.Em resumo, o visual se adapta perfeitamente porque ele se comporta como um líquido: se molda ao tamanho do contêiner elástico de 480px que o protege.

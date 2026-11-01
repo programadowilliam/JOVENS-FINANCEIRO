@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Ranking - JOVENS FINANCEIROS</title>
+    <link rel="stylesheet" href="../../dias_xpstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <!-- LINK PARA O NOVO ARQUIVO DE RANKING -->
+    <link rel="stylesheet" href="../../ranking.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">⚡ JOVENS<span> FINANCEIROS</span></div>
+        <div class="user-status">
+            <div class="streak">🔥 <span id="streakCount">0</span> Dias</div>
+            <div class="coins">🟡 <span id="xpCount">--</span> XP</div>
+        </div>
+    </header>
+
+    <main class="map-viewport">
+        <div class="map-scrollable-content" style="height: auto; padding: 20px;">
+            
+            <div class="menu-container">
+                <h2>🏆 Ranking Global</h2>
+                <p>Veja quem são os maiores poupadores da semana!</p>
+                
+                <div class="ranking-list">
+                    <div class="ranking-item header-rank">
+                        <span>Posição</span>
+                        <span>Usuário</span>
+                        <span>XP Total</span>
+                    </div>
+                    <div class="ranking-item topo-rank">
+                        <span>🥇 1º</span>
+                        <span>Gabriel (Você)</span>
+                        <span id="rankXp">-- XP</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span>🥈 2º</span>
+                        <span>Ana Silva</span>
+                        <span>55 XP</span>
+                    </div>
+                    <div class="ranking-item">
+                        <span>🥉 3º</span>
+                        <span>Lucas Souza</span>
+                        <span>35 XP</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="mobile-nav">
+        <a href="../../index.html" class="nav-item">🗺️ <span>Trilha</span></a>
+        <a href="ranking.html" class="nav-item active">🏆 <span>Ranking</span></a>
+        <a href="perfil.html" class="nav-item">👤 <span>Perfil</span></a>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let fasesConcluidas = 0;
+            for(let i = 1; i <= 6; i++) {
+                if(localStorage.getItem(`fase_${i}_concluida`) === 'true') fasesConcluidas++;
+            }
+            const xpCalculado = 20 + (fasesConcluidas * 20);
+            document.getElementById('xpCount').textContent = xpCalculado;
+            document.getElementById('rankXp').textContent = `${xpCalculado} XP`;
+        });
+    </script>
+</body>
+</html>

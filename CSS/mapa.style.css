@@ -1,0 +1,92 @@
+                            /* VISUAIS DO MAPA DA TRILHA*/
+
+
+.map-path-svg { /* Container invisível em tela cheia que guarda a linha guia do mapa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#linhadetrilha { /*COR DA LINHA DO MAPA */
+    fill: none;
+    stroke: #1899d6;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+/* Camadas e Nós das Fases */
+.nodes-layer { /* Camada posicionada acima da linha para receber os botões clicáveis */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.phase-node { /* Container individual de cada fase para alinhar os elementos verticalmente */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Botões Mecânicos 3D */
+.node-btn { /* Estrutura base circular e efeito 3D dos botões de fases */
+    width: 60px;
+    height: 54px;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.1s ease, border-bottom 0.1s ease;
+}
+
+/* Estado 1: Concluída (Verde Duolingo) */
+.completed .node-btn { /* Aplica fundo verde e borda profunda quando a fase já foi feita */
+    background: var(--node-green);
+    border-bottom: 6px solid var(--node-green-shadow);
+    color: white;
+}
+
+/* Estado 2: Desbloqueada / Pronta para Jogar (Branca Pulando) */
+.active-stage .node-btn { /* Aplica cor branca e ativa a animação de pulo na fase atual */
+    background: var(--node-active);
+    border-bottom: 6px solid var(--node-active-shadow);
+    color: var(--text-dark);
+    animation: bounceActive 2s infinite ease-in-out;
+}
+
+/* Estado 3: Trancada (Cinza Escuro) */
+.locked .node-btn { /* Deixa o botão cinza, o ícone opaco e desativa o cursor de clique */
+    background: var(--node-locked);
+    border-bottom: 6px solid var(--node-locked-shadow);
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Efeito de Clique Mecânico Ativo */
+.node-btn:active { /* Empurra o botão liberado para baixo simulando um clique real em 3D */
+    border-bottom-width: 0px !important;
+    margin-top: 6px !important;
+}
+
+/* Bloqueia o efeito de clique para os nós trancados */
+.locked .node-btn:active { /* Impede o movimento de descida se o botão estiver bloqueado */
+    margin-top: 0px !important;
+    border-bottom-width: 6px !important;
+}
+
+/* Animação de pulo sutil para a fase atual */
+@keyframes bounceActive { /* Faz o botão ativo subir e descer levemente atraindo a atenção */
+    0%, 100% { margin-top: 0px; }
+    50% { margin-top: -6px; }
+}

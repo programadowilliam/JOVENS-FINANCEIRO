@@ -1,0 +1,63 @@
+/* Configurações Globais e Variáveis */
+* { /* Reseta margens e preenchimentos padrões e impede a seleção de textos na tela */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    user-select: none;
+}
+
+:root { /* Paleta de cores globais do aplicativo (Variáveis CSS) */
+    --bg-dark: #121214;
+    --banner-blue: #1899d6;
+    --node-green: #58cc02;
+    --node-green-shadow: #46a302;
+    --node-active: #ffffff;
+    --node-active-shadow: #b3b3b3;
+    --node-locked: #3c3c3c;
+    --node-locked-shadow: #2a2a2a;
+    --text-dark: #1e1e24;
+    --text-light: #ffffff;
+}
+
+body { /* Aplica a cor de fundo padrão e trava a rolagem global da janela */
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Header / Menu Superior */
+.navbar { /* Fixa o cabeçalho no topo da tela e distribui a logo e o status do usuário */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: #1a1a1e;
+    border-bottom: 2px solid #26262b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 24px; font-weight: 900; } /* Estilo do texto principal da marca (JOVENS) */
+.logo span { color: var(--banner-blue); } /* Destaca o sobrenome da marca em azul (FINANCEIROS) */
+.user-status { display: flex; gap: 15px; font-weight: 700; color: #ffc800; } /* Alinha os contadores de Ofensiva e de XP em amarelo */
+
+/* Navegação Inferior Mobile */
+.mobile-nav { /* Fixa o menu com os botões de abas na parte inferior de forma distribuída */
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #1a1a1e;
+    border-top: 2px solid #26262b;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    z-index: 1000;
+}
+
+.nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; font-size: 20px; color: #5a5a63; } /* Organiza o ícone e o texto de cada aba verticalmente */
+.nav-item span { font-size: 10px; font-weight: 700; margin-top: 4px; } /* Estilização dos rótulos de texto pequenos abaixo do ícone da aba */
+.nav-item.active { color: var(--banner-blue); } /* Altera a cor do ícone e do texto para azul na aba selecionada atualmente */

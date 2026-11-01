@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 3 - Golpe Financeiro 🤯</title>
+    <!-- LINK PARA O ARQUIVO MODULARIZADO DE ESTILOS -->
+    <link rel="stylesheet" href="../../CSS/niveis.css">
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Fase 3: Golpe Financeiro 😐</h1>
+        <p>Qual das opções abaixo é um golpe financeiro muito comum contra jovens?</p>
+        <div class="options">
+            <button class="option-btn" onclick="verificarResposta(true)">A) Uma pessoa prometendo lucro garantido e muito alto em pouco tempo, como em "pirâmides" e "renda fácil"</button>
+            <button class="option-btn" onclick="verificarResposta(false)">B) Um banco oficial cobrando tarifa de manutenção informada no contrato</button>
+            <button class="option-btn" onclick="verificarResposta(false)">C) Uma corretora regulamentada oferecendo investimentos de renda fixa</button>
+        </div>
+        <div id="feedback"></div>
+
+          <!-- NA FASE 3, BOTAO DE Voltar ao Menu, SE DESISTIR -->
+        <a href="../../trilha.html" class="back-link">← Desistir e voltar</a>
+
+    </div>
+
+    <script>
+        function verificarResposta(isCorrect) {
+            const feedback = document.getElementById('feedback');
+            if (isCorrect) {
+                feedback.innerHTML = "🎉 Resposta Exata! Se parece bom demais para ser verdade, desconfie.<br><br>" +
+                                     "<button class='next-btn' onclick='concluirFase()'>Avançar na Trilha</button>";
+                feedback.className = "correct";
+            } else {
+                feedback.textContent = "❌ Errado! Promessas de lucro garantido e muito acima do mercado são um sinal clássico de golpe";
+                feedback.className = "incorrect";
+            }
+        }
+        function concluirFase() {
+            localStorage.setItem('fase_3_concluida', 'true');
+
+            // (BOTAO (AVANÇAR NA TRILHA), APOS ACERTA A QUESTAO)
+            window.location.href = "../../trilha.html";
+        }
+    </script>
+</body>
+</html>

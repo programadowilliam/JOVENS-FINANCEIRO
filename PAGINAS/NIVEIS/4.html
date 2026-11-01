@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 4 - Uma Regrinha 🐷</title>
+    <!-- LINK PARA O ARQUIVO MODULARIZADO (Volta de NIVEIS e PAGINAS para achar o css na raiz) -->
+    <link rel="stylesheet" href="../../CSS/niveis.css">
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Fase 4: Uma Regrinha 🐷</h1>
+        <p>Uma regra simples de orçamento é a 50-30-20. <strong> O que ela sugere</strong>?</p>
+        <div class="options">
+            <button class="option-btn" onclick="verificarResposta(true)">A) 50% para gastos essenciais, 30% para desejos e lazer e 20% para poupar ou investir</button>
+            <button class="option-btn" onclick="verificarResposta(false)">B) 50% para investir, 30% para poupar e 20% para gastar com tudo o resto</button>
+            <button class="option-btn" onclick="verificarResposta(false)">C) 50% para lazer, 30% para dívidas e 20% para gastos essenciais</button>
+        </div>
+        <div id="feedback"></div>
+
+          <!-- NA FASE 4, BOTAO DE Voltar ao Menu, SE DESISTIR -->
+        <a href="../../trilha.html" class="back-link">← Desistir e voltar</a>
+
+    </div>
+    <script>
+        function verificarResposta(isCorrect) {
+            const feedback = document.getElementById('feedback');
+            if (isCorrect) {
+                feedback.innerHTML = "🎉 Certo! AOs gastos essenciais, como moradia e alimentação, ficam com a maior fatia.<br><br>" +
+                                     "<button class='next-btn' onclick='concluirFase()'>Avançar na Trilha</button>";
+                feedback.className = "correct";
+            } else {
+                feedback.textContent = "❌ Não exatamente. A regra 50-30-20 é um ponto de partida: metade da renda para necessidades, 30% para desejos e 20% para poupança ou investimentos";
+                feedback.className = "incorrect";
+            }
+        }
+        function concluirFase() {
+            localStorage.setItem('fase_4_concluida', 'true');
+
+            //(BOTAO (AVANÇAR NA TRILHA), APOS ACERTA A QUESTAO)
+            window.location.href = "../../index.html";
+        }
+    </script>
+</body>
+</html>

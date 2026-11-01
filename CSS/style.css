@@ -1,0 +1,66 @@
+/* Viewport e Scroll do Mapa Principal */
+.map-viewport { /* Controla a janela visível do mapa fixando os limites e ativando o scroll vertical */
+    position: fixed;
+    top: 65px;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    cursor: grab;
+}
+
+
+
+.map-viewport:active { cursor: grabbing; } /* Altera o ícone do mouse para mão fechada ao arrastar o mapa */
+.map-viewport::-webkit-scrollbar { display: none; } /* Oculta a barra de rolagem lateral padrão para visual limpo */
+
+
+                                            /*RESPONSIVO*/
+.map-scrollable-content { /* Define a área física total e o comprimento máximo de rolagem da trilha */
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 1400px;
+    margin: 0 auto;
+}
+
+                          /* TITULO DO MAPA */
+.titulogeral { /* Caixa azul no topo que exibe o nome do capítulo atual */
+    background-color: var(--banner-blue);
+    padding: 27px; /*TAMANHO DO TIUTLO*/
+    border-radius: 16px;
+    box-shadow: 0 4px 0 #00fc00;
+    margin: 27px;
+}
+
+
+
+
+
+.subtitulo span { font-size: 17px; font-weight: 900; opacity: 0.8; } /*( SEÇÃO 1, CAPÍTULO 1) */
+.subtitulo h1 { font-size: 19px; font-weight: 700; margin-top: 2px; 
+color: #56ff2c;} /* (Introdução à Sobrevivência Financeira) */
+
+
+
+                /* Efeito de hover apenas nas fases que NÃO estão bloqueadas */
+.phase-node:not(.locked) .node-btn:hover {
+    transform: scale(1.15); /* Aumenta levemente o botão */
+    background-color: #7aec57; /* Muda a cor de fundo para o azul ciano */
+    box-shadow: 0 0 15px #55ff45, 0 0 30px #56ff56; /* Efeito Neon de brilho */
+    cursor: pointer;
+}
+
+                /* Transição suave para o botão voltar ao normal quando tirar o mouse */
+.node-btn {
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+                            /* Efeito de hover apenas para as fases BLOQUEADAS */
+.phase-node.locked .node-btn:hover {
+    background-color: #ff4d4d; /* Vermelho claro */
+    box-shadow: 0 0 15px #ff4d4d, 0 0 30px #ff4d4d; /* Brilho neon vermelho */
+    cursor: not-allowed; /* Muda o cursor do mouse para um sinal de proibido */
+    transform: scale(1.05); /* Um aumento bem sutil, menor que o das fases ativas */
+}

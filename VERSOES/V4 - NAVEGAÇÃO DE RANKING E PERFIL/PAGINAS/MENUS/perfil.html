@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Perfil - JOVENS FINANCEIROS</title>
+    <link rel="stylesheet" href="../../dias_xpstyle.css">
+    <link rel="stylesheet" href="../../style.css">
+    <!-- LINK PARA O NOVO ARQUIVO DE PERFIL -->
+    <link rel="stylesheet" href="../../perfil.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">⚡ JOVENS<span> FINANCEIROS</span></div>
+        <div class="user-status">
+            <div class="streak">🔥 <span id="streakCount">0</span> Dias</div>
+            <div class="coins">🟡 <span id="xpCount">--</span> XP</div>
+        </div>
+    </header>
+
+    <main class="map-viewport">
+        <div class="map-scrollable-content" style="height: auto; padding: 20px;">
+            
+            <div class="menu-container">
+                <h2>👤 Seu Perfil</h2>
+                
+                <div class="avatar-card">
+                    <div class="avatar-pic">⚡</div>
+                    <h3>Jovem Financeiro</h3>
+                    <p>Membro desde: Setembro de 2026</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>XP Total</h4>
+                        <p id="profileXp">--</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Fases Feitas</h4>
+                        <p id="profileFases">0/6</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="mobile-nav">
+        <a href="../../index.html" class="nav-item">🗺️ <span>Trilha</span></a>
+        <a href="ranking.html" class="nav-item">🏆 <span>Ranking</span></a>
+        <a href="perfil.html" class="nav-item active">👤 <span>Perfil</span></a>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let fasesConcluidas = 0;
+            for(let i = 1; i <= 6; i++) {
+                if(localStorage.getItem(`fase_${i}_concluida`) === 'true') fasesConcluidas++;
+            }
+            const xpCalculado = 20 + (fasesConcluidas * 20);
+            document.getElementById('xpCount').textContent = xpCalculado;
+            document.getElementById('profileXp').textContent = xpCalculado;
+            document.getElementById('profileFases').textContent = `${fasesConcluidas}/6`;
+        });
+    </script>
+</body>
+</html>

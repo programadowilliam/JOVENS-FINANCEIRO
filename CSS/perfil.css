@@ -1,0 +1,75 @@
+/* Cartão de Avatar e Grid de Conquistas do Perfil */
+.perfilefeitos { /* Define a largura máxima interna e centraliza os textos da aba Perfil */
+    max-width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.perfilefeitos h2 { /* Estiliza o título principal da tela (👤 Seu Perfil) */
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.avatar-card { /* Caixa cinza escuro com bordas arredondadas que agrupa as informações do usuário */
+    background: #1a1a1e;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #26262b;
+    margin-bottom: 20px;
+}
+
+.avatar-pic { /* Cria o círculo azul com o raio elétrico (⚡) centralizado no meio do cartão */
+    width: 75px;
+    height: 75px;
+    background: #1899d6;
+    border-radius: 50%;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+
+.avatar-card h3 { /* Estiliza o nome de exibição do jogador (Jovem Financeiro) */
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.avatar-card p { /* Texto cinza pequeno indicando a data de criação da conta */
+    color: #8d8d99;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.stats-grid { /* Organiza as duas caixas de conquistas em uma linha horizontal preenchendo o espaço */
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.stat-box { /* Caixa individual para cada estatística com fundo ligeiramente mais claro e borda */
+    flex: 1;
+    background: #202024;
+    padding: 15px;
+    border-radius: 16px;
+    border: 2px solid #323238;
+    text-align: center;
+}
+
+.stat-box h4 { /* Pequeno rótulo superior em letras maiúsculas para categorizar o dado */
+    font-size: 12px;
+    color: #8d8d99;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.stat-box p { /* Destaque numérico grande para as pontuações e estatísticas */
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+}
+
+#profileXp { color: #1899d6; } /* Aplica a cor azul clara específica no número do XP total */
+#profileFases { color: #58cc02; } /* Aplica a cor verde específica no número de missões batidas */

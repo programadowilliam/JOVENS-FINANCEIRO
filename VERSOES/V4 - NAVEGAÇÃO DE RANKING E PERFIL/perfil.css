@@ -1,0 +1,75 @@
+/* Cartão de Avatar e Grid de Conquistas do Perfil */
+.menu-container {
+    max-width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.menu-container h2 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.avatar-card {
+    background: #1a1a1e;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #26262b;
+    margin-bottom: 20px;
+}
+
+.avatar-pic {
+    width: 75px;
+    height: 75px;
+    background: #1899d6;
+    border-radius: 50%;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+
+.avatar-card h3 {
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.avatar-card p {
+    color: #8d8d99;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.stat-box {
+    flex: 1;
+    background: #202024;
+    padding: 15px;
+    border-radius: 16px;
+    border: 2px solid #323238;
+    text-align: center;
+}
+
+.stat-box h4 {
+    font-size: 12px;
+    color: #8d8d99;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.stat-box p {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+}
+
+#profileXp { color: #1899d6; }
+#profileFases { color: #58cc02; }

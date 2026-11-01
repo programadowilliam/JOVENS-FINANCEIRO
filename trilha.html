@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>JOVENS FINANCEIROS</title>
+
+
+                                          <!--VINCULAR LOGO E ARQUVIOS .CSS -->
+    <link rel="shortcut icon" rel="icon" type="image/x-icon" href="favicon.ico"> <!--exibir ícone no navegador -->
+    <link rel="stylesheet" href="CSS/dias_xpstyle.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/modal.css">
+    <link rel="stylesheet" href="CSS/mapa.style.css"> 
+
+                                           <!--CAMINHOS-->
+
+</head>
+<body>
+
+    <!-- NAVEGADOR DA PARTE DE CIMA-->
+    <header class="navbar">
+        <div class="logo">💵 JOVENS<span> FINANCEIROS</span></div>
+        <div class="user-status"></div>
+    </header>
+
+
+                                       <!-- TITULO MEIO DO MAPA com STYLE.CSS -->
+    <main class="map-viewport" id="mapViewport">
+        <div class="map-scrollable-content" id="mapContent">
+            
+            <div class="titulogeral">
+                <div class="subtitulo">
+                    <span>SEÇÃO 1, CAPÍTULO 1</span>
+                    <h1>Introdução à Sobrevivência Financeira</h1>
+                </div>
+            </div>
+
+
+
+            <!-- ADICIONA O MAPA desenhado a linha curva na tela CSS (mapa.style.css)-->
+            <svg class="map-path-svg" xmlns="http://w3.org" viewBox="0 0 480 1400">
+                <path id="linhadetrilha" d="M 240,160 Q 340,260 240,360 T 240,560 T 240,760 T 240,960 T 240,1160" />
+            </svg>
+
+            <!--ADICIONA AS FASES(ICONE DO (index.js) -->
+            <div class="nodes-layer" id="nodesLayer"></div>
+
+        </div>
+    </main>
+
+    <!-- Pop-up Modal Simulando o Exercício da Fase -->
+    <div class="quiz-modal" id="quizModal">
+        <div class="modal-content">
+            <h2>⚡ Desafio Relâmpago!</h2>
+            <p id="quizText">Carregando pergunta...</p>
+            <div class="modal-buttons">
+                <button class="btn-action correct" onclick="window.location.href='PAGINAS/NIVEIS/1.html'">Iniciar Fase  </button>
+                <button class="btn-action cancel" onclick="closeQuiz()">Desistir por enquanto</button>
+            </div>
+        </div>
+    </div>
+
+                        <!-- NAVEGAÇÃO ENTRE TRILHA E PERFIL CSS (dias_xpstyle.css-->
+    <nav class="navegatrilha"> 
+        <a href="trilha.html" class="nav-item active">🗺️ <span>Trilha</span></a> <!-- VINCULAR TRILHA -->
+        <a href="PAGINAS/MENUS/perfil.html" class="nav-item active">👤 <span>Perfil</span></a> <!--VICULAR PERFIL-->
+    </nav>
+
+    <script src="index.js"></script>
+</body>
+</html>
+

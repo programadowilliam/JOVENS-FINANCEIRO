@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 5 - Primeiros Investimentos</title>
+    <!-- LINK PARA O ARQUIVO MODULARIZADO DE ESTILOS -->
+    <link rel="stylesheet" href="../../niveis.css">
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Fase 5: Renda Fixa vs Renda Variável 📈</h1>
+        <p>Se você procura um investmento previsível, onde sabe as regras de rendimento logo no momento da aplicação, você deve escolher:</p>
+        <div class="options">
+            <button class="option-btn" onclick="verificarResposta(false)">A) Renda Variável (como criptomoedas ou ações).</button>
+            <button class="option-btn" onclick="verificarResposta(true)">B) Renda Fixa (como Tesouro Direto ou CDB).</button>
+            <button class="option-btn" onclick="verificarResposta(false)">C) Guardar dinheiro físico debaixo do colchão.</button>
+        </div>
+        <div id="feedback"></div>
+        <a href="../../index.html" class="back-link">← Desistir e voltar</a>
+    </div>
+    <script>
+        function verificarResposta(isCorrect) {
+            const feedback = document.getElementById('feedback');
+            if (isCorrect) {
+                feedback.innerHTML = "🎉 Perfeito! A Renda Fixa oferece a previsibilidade ideal para iniciantes e reservas.<br><br>" +
+                                     "<button class='next-btn' onclick='concluirFase()'>Avançar na Trilha</button>";
+                feedback.className = "correct";
+            } else {
+                feedback.textContent = "❌ Tente novamente! Criptos variam a todo segundo, e o colchão perde valor para a inflação.";
+                feedback.className = "incorrect";
+            }
+        }
+        function concluirFase() {
+            localStorage.setItem('fase_5_concluida', 'true');
+            window.location.href = "../../index.html";
+        }
+    </script>
+</body>
+</html>
